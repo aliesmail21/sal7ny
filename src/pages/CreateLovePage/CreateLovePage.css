@@ -1,0 +1,982 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =====================================================
+   CREATE PAGE
+===================================================== */
+
+.create-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #fff8fa;
+
+    color: #542536;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.create-header {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 40px;
+
+    border-bottom: 1px solid #f3dce4;
+}
+
+.create-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #c4486c;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.create-header>span {
+    color: #9d7181;
+
+    font-size: 14px;
+
+    text-align: right;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.create-layout {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 50px 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+    min-width: 0;
+}
+
+.section-heading>span {
+    color: #d84f76;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.section-heading h1 {
+    max-width: 100%;
+
+    margin: 15px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: #987381;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-group {
+    width: 100%;
+
+    margin-top: 28px;
+
+    min-width: 0;
+}
+
+.form-group>label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 10px;
+
+    color: #754154;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    display: block;
+
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 15px;
+
+    border: 1px solid #eed8e1;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: white;
+
+    color: #542536;
+}
+
+.form-group textarea {
+    min-height: 180px;
+
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #d84f76;
+
+    box-shadow:
+        0 0 0 3px rgba(216, 79, 118, 0.08);
+}
+
+.form-group small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a78290;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   UPLOAD BOX
+===================================================== */
+
+.upload-box {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 35px 20px;
+
+    display: flex !important;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 2px dashed #eac4d2;
+
+    border-radius: 15px;
+
+    background: #fffafd;
+
+    color: #d84f76 !important;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.upload-box:hover {
+    background: #fff1f6;
+
+    border-color: #d84f76;
+}
+
+.upload-box span {
+    margin: 0;
+
+    font-weight: 700;
+}
+
+.upload-box small {
+    margin: 0;
+
+    color: #a78290;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   SELECTED IMAGES
+===================================================== */
+
+.selected-images {
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+.selected-images>p {
+    margin: 0 0 12px;
+
+    color: #9d7181;
+
+    font-size: 13px;
+}
+
+.selected-images-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.selected-image-card {
+    position: relative;
+
+    width: 100%;
+
+    min-width: 0;
+}
+
+.selected-image-card img {
+    display: block;
+
+    width: 100%;
+    height: 100px;
+
+    object-fit: cover;
+
+    border: 1px solid #f0d5df;
+
+    border-radius: 10px;
+}
+
+
+/* Remove */
+
+.remove-image-btn {
+    position: absolute;
+
+    top: 6px;
+    right: 6px;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(84, 37, 54, 0.85);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.remove-image-btn:hover {
+    background: #d84f76;
+
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   SUCCESS BOX
+===================================================== */
+
+.success-box {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 28px 22px;
+
+    background:
+        linear-gradient(135deg,
+            #fff0f5,
+            #fff8fa);
+
+    border: 1px solid #efcbd8;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    color: #c4486c;
+
+    box-shadow:
+        0 12px 30px rgba(180, 85, 115, 0.08);
+}
+
+.success-heart {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.success-box h3 {
+    margin: 12px 0 8px;
+
+    color: #71394b;
+
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+}
+
+.success-box p {
+    margin: 0 0 15px;
+
+    color: #987381;
+
+    font-size: 14px;
+}
+
+
+/* Created Link */
+
+.created-link {
+    width: 100%;
+
+    padding: 12px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    border: 1px solid #efd5df;
+
+    border-radius: 10px;
+
+    color: #805467;
+
+    font-size: 13px;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   SUCCESS BUTTONS
+===================================================== */
+
+.share-link-btn,
+.copy-link-btn,
+.open-link-btn {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 13px 18px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 100px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Share */
+
+.share-link-btn {
+    border: none;
+
+    background: #d84f76;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(216, 79, 118, 0.18);
+}
+
+.share-link-btn:hover {
+    background: #c13f65;
+
+    transform: translateY(-1px);
+}
+
+
+/* Copy */
+
+.copy-link-btn {
+    border: 1px solid #eac4d2;
+
+    background: white;
+
+    color: #c4486c;
+}
+
+.copy-link-btn:hover {
+    background: #fff8fa;
+}
+
+
+/* Open */
+
+.open-link-btn {
+    border: 1px solid #eac4d2;
+
+    background: white;
+
+    color: #c4486c;
+}
+
+.open-link-btn:hover {
+    background: #fff8fa;
+}
+
+
+/* =====================================================
+   PUBLISH BUTTON
+===================================================== */
+
+.publish-btn {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 15px 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 100px;
+
+    background: #d84f76;
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.publish-btn:hover:not(:disabled) {
+    background: #c13f65;
+
+    transform: translateY(-1px);
+}
+
+.publish-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+
+/* Error */
+
+.error-message {
+    color: #c4486c;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   PREVIEW
+===================================================== */
+
+.preview-section {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 25px;
+
+    background: #f9dce5;
+
+    border-radius: 25px;
+}
+
+.preview-label {
+    margin-bottom: 20px;
+
+    color: #a85c77;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+.love-preview {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 500px;
+
+    padding: 35px 25px;
+
+    background: #fffaf5;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.preview-top {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #b56c82;
+
+    font-size: 12px;
+}
+
+.love-preview h2 {
+    max-width: 100%;
+
+    margin: 30px 0;
+
+    color: #71394b;
+
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+}
+
+.love-preview h2 span {
+    color: #d84f76;
+
+    font-style: italic;
+}
+
+.preview-message {
+    width: 100%;
+
+    color: #906b78;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    text-align: left;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* Preview Song */
+
+.preview-song {
+    margin-top: 22px;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 12px;
+
+    background: #fff0f5;
+
+    border: 1px solid #f1d2dd;
+
+    color: #d84f76;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Preview Gallery */
+
+.preview-gallery {
+    width: 100%;
+
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+.preview-gallery img {
+    display: block;
+
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.preview-footer {
+    margin-top: 35px;
+
+    color: #d84f76;
+
+    font-family: Georgia, serif;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .create-layout {
+        gap: 35px;
+
+        padding: 40px 25px;
+    }
+
+    .section-heading h1 {
+        font-size: 36px;
+    }
+
+    .love-preview {
+        padding: 30px 20px;
+    }
+
+    .love-preview h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .create-layout {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 30px 20px;
+    }
+
+    .section-heading h1 {
+        font-size: 34px;
+    }
+
+    .create-header {
+        padding: 20px;
+    }
+
+    .create-header>span {
+        display: none;
+    }
+
+    .preview-section {
+        padding: 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .create-layout {
+        padding: 25px 15px;
+    }
+
+    .create-header {
+        padding: 18px 15px;
+    }
+
+    .create-logo {
+        font-size: 20px;
+    }
+
+    .section-heading h1 {
+        font-size: 30px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 13px;
+    }
+
+    .upload-box {
+        padding: 28px 15px;
+    }
+
+    .selected-images-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .love-preview {
+        padding: 28px 18px;
+    }
+
+    .love-preview h2 {
+        font-size: 25px;
+    }
+
+    .preview-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-gallery img {
+        height: 180px;
+    }
+
+    .success-box {
+        padding: 25px 16px;
+    }
+}
+
+/* =========================
+   Upload Progress
+========================= */
+
+.upload-progress-box {
+    margin-top: 24px;
+    padding: 18px;
+    background: #fff7fa;
+    border: 1px solid #f3d7e0;
+    border-radius: 16px;
+}
+
+.upload-progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 12px;
+    color: #7d3b52;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.upload-progress-header strong {
+    color: #d84f76;
+    font-size: 14px;
+}
+
+.upload-progress-track {
+    width: 100%;
+    height: 9px;
+    overflow: hidden;
+    background: #f1dfe5;
+    border-radius: 999px;
+}
+
+.upload-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg,
+            #d84f76,
+            #ed7897);
+    border-radius: inherit;
+    transition: width 0.2s ease;
+}
+
+.upload-progress-box small {
+    display: block;
+    margin-top: 10px;
+    color: #9b6b7b;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =====================================================
+   HIDDEN FILE INPUT
+===================================================== */
+
+.upload-box input[type="file"] {
+    display: none !important;
+}
+
+/* =====================================================
+   UPLOAD BOX POLISH
+===================================================== */
+
+.upload-box {
+    position: relative;
+
+    min-height: 185px;
+
+    user-select: none;
+}
+
+.upload-box svg {
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.upload-box:hover svg {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.upload-box:active {
+    transform: scale(0.99);
+}
+
+/* =====================================================
+   DISABLED FORM STATE
+===================================================== */
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+    background: #f8f1f4;
+    color: #9d7181;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.upload-box-disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.remove-image-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}

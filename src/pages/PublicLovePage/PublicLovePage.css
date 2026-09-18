@@ -1,0 +1,1513 @@
+/* =====================================================
+   PUBLIC LOVE PAGE
+===================================================== */
+
+.public-love-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 45px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+
+    color: #542536;
+
+    background:
+        radial-gradient(circle at 15% 15%,
+            #ffe1eb,
+            transparent 32%),
+        radial-gradient(circle at 85% 80%,
+            #f9d5df,
+            transparent 32%),
+        #fff8fa;
+}
+
+
+/* =====================================================
+   MAIN CONTENT CARD
+===================================================== */
+
+.public-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 55px 50px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 250, 247, 0.94);
+
+    border: 1px solid #f2dce3;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 80px rgba(180, 85, 115, 0.14);
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.public-badge {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    color: #c4486c;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.public-content h1 {
+    width: 100%;
+
+    margin: 10px 0 25px;
+
+    color: #71394b;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(34px, 5vw, 58px);
+
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.public-content h1 span {
+    color: #d84f76;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.public-divider {
+    width: 100%;
+    max-width: 320px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #d84f76;
+}
+
+.public-divider::before,
+.public-divider::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: #eacbd5;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.public-message {
+    width: 100%;
+
+    margin: 0 0 30px;
+
+    color: #805467;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    line-height: 2;
+
+    text-align: center;
+
+    white-space: pre-wrap;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   SPECIAL SONG
+===================================================== */
+
+.song-player {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 105px;
+
+    margin: 35px 0;
+
+    padding: 16px 18px;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr auto;
+
+    align-items: center;
+
+    gap: 16px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(135deg,
+            #fff0f5,
+            #fff8fa);
+
+    border: 1px solid #f0d2dc;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 12px 35px rgba(180, 85, 115, 0.1);
+
+    text-align: left;
+}
+
+.song-player::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    right: -80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(216, 79, 118, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* Song Cover */
+
+.song-cover {
+    position: relative;
+    z-index: 1;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    background: #d84f76;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(216, 79, 118, 0.25);
+
+    animation: musicPulse 2.5s ease-in-out infinite;
+}
+
+
+/* Song Details */
+
+.song-details {
+    position: relative;
+    z-index: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.song-label {
+    color: #c4486c;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.song-details h3 {
+    margin: 0;
+
+    color: #71394b;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+}
+
+.song-details p {
+    margin: 0;
+
+    color: #a47b89;
+
+    font-size: 13px;
+}
+
+
+/* Listen Button */
+
+.song-play-btn {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-width: 95px;
+
+    padding: 12px 17px;
+
+    border-radius: 13px;
+
+    background: #d84f76;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 20px rgba(216, 79, 118, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.song-play-btn:hover {
+    background: #bd3e63;
+
+    transform: translateY(-2px);
+}
+
+
+/* YouTube */
+
+.song-youtube-link {
+    position: absolute;
+
+    right: 18px;
+    bottom: 8px;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    color: #b58a99;
+
+    font-size: 9px;
+
+    text-decoration: none;
+
+    opacity: 0.8;
+
+    transition: opacity 0.2s ease;
+}
+
+.song-youtube-link:hover {
+    opacity: 1;
+}
+
+
+/* Music Animation */
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* =====================================================
+   MOBILE GALLERY
+===================================================== */
+
+.public-gallery {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.public-image-card {
+    width: 100%;
+
+    height: 220px;
+
+    padding: 6px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 20px rgba(180, 85, 115, 0.08);
+}
+
+.public-image-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 11px;
+}
+
+.public-image-card:hover {
+    transform: none;
+
+    box-shadow:
+        0 6px 20px rgba(180, 85, 115, 0.08);
+}
+
+.public-image-card:hover img {
+    transform: none;
+
+    filter: none;
+}
+
+/* Always show a subtle hint on touch devices */
+.image-view-hint {
+    right: 10px;
+    bottom: 10px;
+
+    width: 28px;
+    height: 28px;
+
+    opacity: 0.85;
+
+    transform: scale(1);
+}
+
+/* =====================================================
+   PHOTO CARD
+===================================================== */
+
+.public-image-card {
+    position: relative;
+
+    width: 100%;
+    height: 230px;
+
+    padding: 7px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #f0d5df;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(180, 85, 115, 0.09);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.public-image-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 32px rgba(180, 85, 115, 0.17);
+}
+
+
+/* Image */
+
+.public-image-card img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.public-image-card:hover img {
+    transform: scale(1.025);
+
+    filter: brightness(1.03);
+}
+
+
+/* Small hover icon */
+
+.image-view-hint {
+    position: absolute;
+
+    right: 13px;
+    bottom: 13px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: #d84f76;
+
+    opacity: 0;
+
+    transform: scale(0.8);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    pointer-events: none;
+}
+
+.public-image-card:hover .image-view-hint {
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.public-bottom {
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #f0dce3;
+
+    color: #d84f76;
+
+    text-align: center;
+}
+
+.public-bottom p {
+    margin: 12px 0;
+
+    color: #d84f76;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+.public-bottom span {
+    color: #b58a99;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.floating-heart {
+    position: absolute;
+
+    bottom: -80px;
+
+    display: block;
+
+    opacity: 0;
+
+    font-size: 22px;
+
+    animation-name: floatingHeart;
+
+    animation-timing-function: linear;
+
+    animation-iteration-count: infinite;
+
+    filter:
+        drop-shadow(0 5px 10px rgba(216, 79, 118, 0.15));
+}
+
+.heart-1 {
+    left: 5%;
+    font-size: 20px;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    left: 12%;
+    font-size: 32px;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.heart-3 {
+    left: 20%;
+    font-size: 18px;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.heart-4 {
+    left: 28%;
+    font-size: 27px;
+    animation-duration: 12s;
+    animation-delay: 5s;
+}
+
+.heart-5 {
+    left: 36%;
+    font-size: 16px;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.heart-6 {
+    left: 44%;
+    font-size: 30px;
+    animation-duration: 14s;
+    animation-delay: 6s;
+}
+
+.heart-7 {
+    left: 52%;
+    font-size: 19px;
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+.heart-8 {
+    left: 60%;
+    font-size: 26px;
+    animation-duration: 12s;
+    animation-delay: 1s;
+}
+
+.heart-9 {
+    left: 68%;
+    font-size: 17px;
+    animation-duration: 9s;
+    animation-delay: 7s;
+}
+
+.heart-10 {
+    left: 75%;
+    font-size: 34px;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.heart-11 {
+    left: 82%;
+    font-size: 21px;
+    animation-duration: 11s;
+    animation-delay: 5s;
+}
+
+.heart-12 {
+    left: 90%;
+    font-size: 28px;
+    animation-duration: 13s;
+    animation-delay: 8s;
+}
+
+.heart-13 {
+    left: 15%;
+    font-size: 14px;
+    animation-duration: 11s;
+    animation-delay: 6s;
+}
+
+.heart-14 {
+    left: 32%;
+    font-size: 24px;
+    animation-duration: 10s;
+    animation-delay: 8s;
+}
+
+.heart-15 {
+    left: 48%;
+    font-size: 15px;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.heart-16 {
+    left: 64%;
+    font-size: 29px;
+    animation-duration: 11s;
+    animation-delay: 9s;
+}
+
+.heart-17 {
+    left: 78%;
+    font-size: 16px;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.heart-18 {
+    left: 94%;
+    font-size: 25px;
+    animation-duration: 14s;
+    animation-delay: 7s;
+}
+
+@keyframes floatingHeart {
+    0% {
+        transform:
+            translateY(0) translateX(0) rotate(0deg) scale(0.7);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.55;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh) translateX(25px) rotate(12deg) scale(1);
+
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh) translateX(-30px) rotate(-15deg) scale(0.85);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 90px;
+
+    box-sizing: border-box;
+
+    background: rgba(35, 15, 25, 0.93);
+
+    animation: lightboxAppear 0.2s ease;
+}
+
+.lightbox-image {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 90vw;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.45);
+}
+
+
+/* Close */
+
+.lightbox-close {
+    position: absolute;
+
+    top: 22px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(216, 79, 118, 0.9);
+
+    transform: rotate(5deg);
+}
+
+
+/* Navigation */
+
+.lightbox-nav {
+    position: absolute;
+
+    top: 50%;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.16);
+
+    color: white;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lightbox-nav:hover {
+    background: #d84f76;
+
+    transform:
+        translateY(-50%) scale(1.06);
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+
+/* Counter */
+
+.lightbox-counter {
+    position: absolute;
+
+    bottom: 22px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* Lightbox animation */
+
+@keyframes lightboxAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   ROMANTIC INTRO
+===================================================== */
+
+.love-intro {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background:
+        radial-gradient(circle at 30% 20%,
+            rgba(255, 190, 210, 0.35),
+            transparent 35%),
+        radial-gradient(circle at 75% 80%,
+            rgba(255, 210, 225, 0.35),
+            transparent 35%),
+        #fff7fa;
+
+    animation: introAppear 0.8s ease;
+}
+
+.intro-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(216, 79, 118, 0.08);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+.intro-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 480px;
+
+    padding: 55px 40px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background: rgba(255, 250, 247, 0.94);
+
+    border: 1px solid #f2dce3;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 30px 100px rgba(150, 55, 90, 0.16);
+
+    backdrop-filter: blur(12px);
+
+    animation: introCardAppear 0.9s ease;
+}
+
+
+/* Intro Heart */
+
+.intro-heart {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #d84f76;
+
+    background: #ffe7ef;
+
+    box-shadow:
+        0 10px 30px rgba(216, 79, 118, 0.18);
+
+    animation: introHeartBeat 2s ease-in-out infinite;
+}
+
+.intro-small-text {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #a47b89;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.intro-card h2 {
+    margin: 0;
+
+    color: #71394b;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(30px, 5vw, 42px);
+
+    font-weight: 400;
+
+    line-height: 1.35;
+}
+
+.intro-card h2 span {
+    color: #d84f76;
+}
+
+.intro-card p {
+    margin: 22px auto 30px;
+
+    max-width: 330px;
+
+    color: #9c7180;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* Intro Button */
+
+.intro-open-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 14px 24px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #d84f76;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(216, 79, 118, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.intro-open-btn:hover {
+    background: #bd3e63;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(216, 79, 118, 0.32);
+}
+
+.intro-open-btn:active {
+    transform: translateY(0);
+}
+
+.intro-footer {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #c19aa8;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+}
+
+
+/* Intro Animations */
+
+@keyframes introAppear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes introCardAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+@keyframes introHeartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* Main page opening */
+
+.love-page-opened .public-content {
+    animation: pageContentAppear 0.8s ease;
+}
+
+@keyframes pageContentAppear {
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   LOADING / ERROR
+===================================================== */
+
+.public-loading,
+.public-error {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background: #fff8fa;
+
+    color: #c4486c;
+
+    text-align: center;
+}
+
+.public-error h2 {
+    margin: 0;
+
+    color: #71394b;
+
+    font-family: Georgia, serif;
+
+    font-size: 35px;
+}
+
+.public-error p {
+    color: #9c7180;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .public-love-page {
+        padding: 30px 15px;
+    }
+
+    .public-content {
+        padding: 45px 30px;
+    }
+
+    .public-gallery {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .public-image-card {
+        height: 220px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .public-love-page {
+        padding: 18px 10px;
+    }
+
+    .public-content {
+        padding: 35px 18px;
+
+        border-radius: 20px;
+    }
+
+    .public-badge {
+        font-size: 13px;
+    }
+
+    .public-content h1 {
+        font-size: 34px;
+
+        line-height: 1.4;
+    }
+
+    .public-message {
+        font-size: 17px;
+
+        line-height: 1.9;
+    }
+
+
+    /* Song */
+
+    .song-player {
+        grid-template-columns:
+            60px 1fr;
+
+        gap: 14px;
+
+        padding: 16px;
+    }
+
+    .song-cover {
+        width: 60px;
+        height: 60px;
+
+        border-radius: 15px;
+    }
+
+    .song-details h3 {
+        font-size: 17px;
+    }
+
+    .song-details p {
+        font-size: 12px;
+    }
+
+    .song-play-btn {
+        grid-column: 1 / -1;
+
+        width: 100%;
+    }
+
+    .song-youtube-link {
+        position: static;
+
+        grid-column: 1 / -1;
+
+        justify-content: center;
+
+        margin-top: -4px;
+    }
+
+
+    /* Gallery */
+
+    .public-gallery {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+        margin-top: 30px;
+    }
+
+    .public-image-card {
+        height: 260px;
+
+        border-radius: 16px;
+    }
+
+
+    /* Lightbox */
+
+    .lightbox-overlay {
+        padding: 70px 18px;
+    }
+
+    .lightbox-image {
+        max-width: 94vw;
+
+        max-height: 78vh;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+    .lightbox-nav {
+        width: 42px;
+        height: 42px;
+    }
+
+    .lightbox-prev {
+        left: 12px;
+    }
+
+    .lightbox-next {
+        right: 12px;
+    }
+
+    .lightbox-counter {
+        bottom: 15px;
+    }
+
+
+    /* Intro */
+
+    .love-intro {
+        padding: 18px;
+    }
+
+    .intro-card {
+        padding: 45px 25px;
+
+        border-radius: 25px;
+    }
+
+    .intro-heart {
+        width: 70px;
+        height: 70px;
+    }
+
+    .intro-card h2 {
+        font-size: 30px;
+    }
+
+    .intro-card p {
+        font-size: 15px;
+    }
+
+    .intro-open-btn {
+        width: 100%;
+
+        padding: 14px 18px;
+    }
+
+
+    /* Footer */
+
+    .public-bottom {
+        margin-top: 35px;
+    }
+}
+
+/* =====================================================
+   MOBILE TYPOGRAPHY POLISH
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .public-content h1 {
+        font-size: 36px;
+        line-height: 1.25;
+        margin: 15px 0 25px;
+    }
+
+    .public-message {
+        font-size: 18px;
+        line-height: 1.85;
+        padding: 0 4px;
+    }
+
+    .song-details h3 {
+        font-size: 18px;
+    }
+
+    .song-details p {
+        font-size: 12px;
+    }
+
+    .public-bottom p {
+        font-size: 17px;
+    }
+
+    .public-bottom span {
+        font-size: 11px;
+    }
+}

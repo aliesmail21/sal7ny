@@ -340,10 +340,6 @@ function CreateLovePage() {
   // Open Link
   // =========================
 
-  function handleOpenLink() {
-    window.open(createdLink, "_blank");
-  }
-
   return (
     <div className="create-page">
       <header className="create-header">
@@ -567,14 +563,15 @@ function CreateLovePage() {
 
               {/* Open */}
 
-              <button
-                type="button"
+              <a
+                href={createdLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="open-link-btn"
-                onClick={handleOpenLink}
               >
                 <ExternalLink size={17} />
                 Open LovePage
-              </button>
+              </a>
             </div>
           )}
 

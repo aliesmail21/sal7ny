@@ -231,9 +231,11 @@ textarea {
 ===================================================== */
 
 .upload-box {
-    width: 100%;
+    position: relative;
 
+    width: 100%;
     min-width: 0;
+    min-height: 185px;
 
     padding: 35px 20px;
 
@@ -258,15 +260,22 @@ textarea {
 
     cursor: pointer;
 
+    user-select: none;
+
     transition:
         background 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .upload-box:hover {
     background: #fff1f6;
 
     border-color: #d84f76;
+}
+
+.upload-box:active {
+    transform: scale(0.99);
 }
 
 .upload-box span {
@@ -281,6 +290,25 @@ textarea {
     color: #a78290;
 
     font-weight: 400;
+}
+
+.upload-box svg {
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.upload-box:hover svg {
+    transform: translateY(-3px) scale(1.05);
+}
+
+
+/* =====================================================
+   HIDDEN FILE INPUT
+===================================================== */
+
+.upload-box input[type="file"] {
+    display: none !important;
 }
 
 
@@ -333,7 +361,9 @@ textarea {
 }
 
 
-/* Remove */
+/* =====================================================
+   REMOVE IMAGE
+===================================================== */
 
 .remove-image-btn {
     position: absolute;
@@ -370,6 +400,14 @@ textarea {
     background: #d84f76;
 
     transform: scale(1.08);
+}
+
+.remove-image-btn:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
 }
 
 
@@ -427,14 +465,14 @@ textarea {
 }
 
 
-/* Created Link */
+/* =====================================================
+   CREATED LINK
+===================================================== */
 
 .created-link {
     width: 100%;
 
     padding: 12px;
-
-    box-sizing: border-box;
 
     background: white;
 
@@ -480,11 +518,16 @@ textarea {
 
     transition:
         background 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        border-color 0.2s ease;
+
+    text-decoration: none;
 }
 
 
-/* Share */
+/* =====================================================
+   SHARE
+===================================================== */
 
 .share-link-btn {
     border: none;
@@ -504,7 +547,9 @@ textarea {
 }
 
 
-/* Copy */
+/* =====================================================
+   COPY
+===================================================== */
 
 .copy-link-btn {
     border: 1px solid #eac4d2;
@@ -516,10 +561,14 @@ textarea {
 
 .copy-link-btn:hover {
     background: #fff8fa;
+
+    transform: translateY(-1px);
 }
 
 
-/* Open */
+/* =====================================================
+   OPEN LOVE PAGE
+===================================================== */
 
 .open-link-btn {
     border: 1px solid #eac4d2;
@@ -527,10 +576,29 @@ textarea {
     background: white;
 
     color: #c4486c;
+
+    text-decoration: none;
+
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .open-link-btn:hover {
     background: #fff8fa;
+
+    transform: translateY(-1px);
+
+    border-color: #d84f76;
+}
+
+.open-link-btn:active {
+    transform: translateY(0);
+}
+
+.open-link-btn:visited {
+    color: #c4486c;
+
+    text-decoration: none;
 }
 
 
@@ -582,9 +650,13 @@ textarea {
 }
 
 
-/* Error */
+/* =====================================================
+   ERROR
+===================================================== */
 
 .error-message {
+    margin-top: 12px;
+
     color: #c4486c;
 
     font-size: 14px;
@@ -694,7 +766,9 @@ textarea {
 }
 
 
-/* Preview Song */
+/* =====================================================
+   PREVIEW SONG
+===================================================== */
 
 .preview-song {
     margin-top: 22px;
@@ -722,7 +796,9 @@ textarea {
 }
 
 
-/* Preview Gallery */
+/* =====================================================
+   PREVIEW GALLERY
+===================================================== */
 
 .preview-gallery {
     width: 100%;
@@ -756,6 +832,107 @@ textarea {
     font-family: Georgia, serif;
 
     font-style: italic;
+}
+
+
+/* =====================================================
+   UPLOAD PROGRESS
+===================================================== */
+
+.upload-progress-box {
+    margin-top: 24px;
+
+    padding: 18px;
+
+    background: #fff7fa;
+
+    border: 1px solid #f3d7e0;
+
+    border-radius: 16px;
+}
+
+.upload-progress-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+
+    color: #7d3b52;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.upload-progress-header strong {
+    color: #d84f76;
+
+    font-size: 14px;
+}
+
+.upload-progress-track {
+    width: 100%;
+
+    height: 9px;
+
+    overflow: hidden;
+
+    background: #f1dfe5;
+
+    border-radius: 999px;
+}
+
+.upload-progress-bar {
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            #d84f76,
+            #ed7897);
+
+    border-radius: inherit;
+
+    transition: width 0.2s ease;
+}
+
+.upload-progress-box small {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #9b6b7b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   DISABLED FORM STATE
+===================================================== */
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+    background: #f8f1f4;
+
+    color: #9d7181;
+
+    cursor: not-allowed;
+
+    opacity: 0.8;
+}
+
+.upload-box-disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    pointer-events: none;
 }
 
 
@@ -817,6 +994,10 @@ textarea {
 }
 
 
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
 @media (max-width: 500px) {
 
     .create-layout {
@@ -868,115 +1049,12 @@ textarea {
     .success-box {
         padding: 25px 16px;
     }
-}
 
-/* =========================
-   Upload Progress
-========================= */
+    .upload-progress-header {
+        align-items: flex-start;
 
-.upload-progress-box {
-    margin-top: 24px;
-    padding: 18px;
-    background: #fff7fa;
-    border: 1px solid #f3d7e0;
-    border-radius: 16px;
-}
+        flex-direction: column;
 
-.upload-progress-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 12px;
-    color: #7d3b52;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.upload-progress-header strong {
-    color: #d84f76;
-    font-size: 14px;
-}
-
-.upload-progress-track {
-    width: 100%;
-    height: 9px;
-    overflow: hidden;
-    background: #f1dfe5;
-    border-radius: 999px;
-}
-
-.upload-progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg,
-            #d84f76,
-            #ed7897);
-    border-radius: inherit;
-    transition: width 0.2s ease;
-}
-
-.upload-progress-box small {
-    display: block;
-    margin-top: 10px;
-    color: #9b6b7b;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-/* =====================================================
-   HIDDEN FILE INPUT
-===================================================== */
-
-.upload-box input[type="file"] {
-    display: none !important;
-}
-
-/* =====================================================
-   UPLOAD BOX POLISH
-===================================================== */
-
-.upload-box {
-    position: relative;
-
-    min-height: 185px;
-
-    user-select: none;
-}
-
-.upload-box svg {
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-}
-
-.upload-box:hover svg {
-    transform: translateY(-3px) scale(1.05);
-}
-
-.upload-box:active {
-    transform: scale(0.99);
-}
-
-/* =====================================================
-   DISABLED FORM STATE
-===================================================== */
-
-.form-group input:disabled,
-.form-group textarea:disabled {
-    background: #f8f1f4;
-    color: #9d7181;
-    cursor: not-allowed;
-    opacity: 0.8;
-}
-
-.upload-box-disabled {
-    opacity: 0.65;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.remove-image-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
+        gap: 6px;
+    }
 }
